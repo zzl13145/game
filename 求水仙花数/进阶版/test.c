@@ -1,3 +1,4 @@
+
 #include <stdio.h>
 int main() 
 {
@@ -8,7 +9,7 @@ int main()
 		int j = i;
 		if (i < 1000)
 		{
-			while (j)
+			while (j)//三位数
 			{
 				int k = 0;
 				k = j % 10;
@@ -21,7 +22,7 @@ int main()
 				printf("%d ", i);
 			}
 		}
-		else if(i>=1000 && i<10000)
+		else if(i>=1000 && i<10000)//四位数
 		{
 			while (j)
 			{
@@ -36,7 +37,7 @@ int main()
 				printf("%d ", i);
 			}
 		}
-		else if (i >= 10000 && i < 100000)
+		else if (i >= 10000 && i < 100000)//五位数
 		{
 			while (j)
 			{
