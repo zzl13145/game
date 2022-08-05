@@ -1,0 +1,5 @@
+﻿  contact.c
+D:\VS2019项目\通讯录-动态存储\cantact-dynamic\contact.c(10,11): warning C4098: “InitContact”:“void”函数返回值
+  test.c
+  正在生成代码...
+  cantact-dynamic.vcxproj -> D:\VS2019项目\通讯录-动态存储\cantact-dynamic\Debug\cantact-dynamic.exe
