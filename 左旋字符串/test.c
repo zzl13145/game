@@ -21,15 +21,20 @@ void left_move(char* arr, int k)
 {
 	assert(arr);//¶ÏÑÔ£¨ÅÐ¶ÏarrÊÇ·ñÎª¿ÕÖ¸Õë£©
 	int len = strlen(arr);
-	reverse(arr, arr + k - 1);//ÄæÐò×ó±ß×Ö·û´®
-	reverse(arr + k, arr + len - 1);//ÄæÐòÓÒ±ß×Ö·û´®
-	reverse(arr, arr + len - 1);//ÄæÐòÕû¸ö×Ö·û´®
+	reverse(arr, arr + k - 1);//ÄæÐòÇ°°ë²¿·ÝµÄ×Ö·û´®       123 456 ->321 456
+	reverse(arr + k, arr + len - 1);//ÄæÐòºó°ë²¿·ÝµÄ×Ö·û´® 321 456 ->321 654
+	reverse(arr, arr + len - 1);//ÄæÐòÕû¸ö×Ö·û´®           321 654 ->456 123
 }
 int main()
 {
 	char arr[] = "abcdef";
 	int k = 0;
+	int sz = sizeof(arr) / sizeof(arr[0]) - 1;
 	scanf_s("%d", &k);
+	if (k >= sz)
+	{
+		k %= sz;
+	}
 	left_move(arr, k);
 	printf("%s\n", arr);
 
