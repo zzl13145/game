@@ -1,0 +1,14 @@
+﻿  game.c
+D:\VS2019项目\Snake\game.h(11,24): warning C4042: “maphigh”: 有坏的存储类
+D:\VS2019项目\Snake\game.h(11,38): warning C4042: “mapwide”: 有坏的存储类
+  test.c
+D:\VS2019项目\Snake\game.h(11,24): warning C4042: “maphigh”: 有坏的存储类
+D:\VS2019项目\Snake\game.h(11,38): warning C4042: “mapwide”: 有坏的存储类
+  正在生成代码...
+test.obj : error LNK2005: _maphigh 已经在 game.obj 中定义
+test.obj : error LNK2005: _mapwide 已经在 game.obj 中定义
+test.obj : error LNK2005: _snakesize 已经在 game.obj 中定义
+test.obj : error LNK2005: _speed 已经在 game.obj 中定义
+test.obj : error LNK2005: _len 已经在 game.obj 中定义
+test.obj : error LNK2005: _key 已经在 game.obj 中定义
+D:\VS2019项目\Snake\Debug\Snake.exe : fatal error LNK1169: 找到一个或多个多重定义的符号
