@@ -1,5 +1,5 @@
 #include <stdio.h>
-#define N 14
+#define N 15
 int main()
 {
     int i, j, k, n = 0, a[N][N];  /*定义二维数组a[14][14]*/
