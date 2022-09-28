@@ -47,7 +47,7 @@ int main()
 	do
 	{
 		menu();
-		printf("请选择(1/0):>");
+		printf("请选择:>");
 		scanf("%d", &input);
 		switch (input)
 		{
