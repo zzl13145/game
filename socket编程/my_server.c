@@ -42,7 +42,10 @@ struct in_addr{
 	 int iAddrLen;
 	 int iRecvLen;
 	 unsigned char ucRecvBuf[1000];//存储客户端发送来的信息
-	 int iClientNum = -1;	 
+	 int iClientNum = -1;	
+
+	 signal(SIGCHLD,SIG_IGN);//清除僵尸进程
+	 
 	 /*int socket(int domain, int type, int protocol);
 	  * domain：	协议族（如ipv4）
 	  * type：		信息传送方式（如TCP、UDP）
