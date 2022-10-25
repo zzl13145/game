@@ -1,0 +1,2 @@
+D:\VS2019项目\通讯录-动态存储\cantact-dynamic\Debug\cantact-dynamic.exe
+D:\githug练习代码\game\C语言\通讯录-动态存储\cantact-dynamic\Debug\cantact-dynamic.exe
