@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <unistd.h>
 #include <pthread.h>
-#include <semaphore.h>//信号量
+#include <semaphore.h>//信号量头文件
 #include <string.h>
 
 
