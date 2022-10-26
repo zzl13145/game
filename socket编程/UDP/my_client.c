@@ -16,9 +16,7 @@
 
 （3）向服务器发送数据，sendto() ；
 
-（4）接收服务器的数据，recvfrom() ；
-
-（5）关闭套接字，close() 
+（4）关闭套接字，close() 
  */
 
 #define SERVER_PORT 8888
@@ -59,27 +57,29 @@ struct in_addr{
 */
 	tSocketServerAddr.sin_family      = AF_INET;
 	tSocketServerAddr.sin_port        = htons(SERVER_PORT);  /* host to net, short */
- 	/*输入服务器端ip到tSocketServerAddr.sin_addr*/
+ 	/*inet_aton将点分十进制的字符串（如127.0.0.1）转换为网络字节序的二进制数，
+	并存储在tSocketServerAddr.sin_addr，成功返回非0；失败返回0*/
  	if (0 == inet_aton(argv[1], &tSocketServerAddr.sin_addr))
  	{
 		printf("invalid server_ip\n");
 		return -1;
 	}
 	memset(tSocketServerAddr.sin_zero, 0, 8);
-
-
-	iRet = connect(iSocketClient, (const struct sockaddr *)&tSocketServerAddr, sizeof(struct sockaddr));	
-	if (-1 == iRet)
-	{
-		printf("connect error!\n");
-		return -1;
-	}
-
+	
 	while (1)
 	{
 		if (fgets(ucSendBuf, 999, stdin))
 		{
-			iSendLen = send(iSocketClient, ucSendBuf, strlen(ucSendBuf), 0);
+			//iAddrLen = sizeof(struct sockaddr);
+/* ssize_t sendto(int sockfd, const void *buf, size_t len, int flags,const struct sockaddr *dest_addr, socklen_t addrlen);
+ * sendto 和 send 相似，区别在于 sendto 允许在无连接的套接字上指定一个目标地址。
+ * dest_addr 表示目地机的 IP 地址和端口号信息
+ * addrlen 常常被赋值为 sizeof （struct sockaddr）。
+ * sendto 函数也返回实际发送的数据字节长度或在出现发送错误时返回-1。
+ */
+			iSendLen = sendto(iSocketClient, ucSendBuf, strlen(ucSendBuf), 0,
+			                      (const struct sockaddr *)&tSocketServerAddr, sizeof(struct sockaddr));
+			
 			if (iSendLen <= 0)
 			{
 				close(iSocketClient);
