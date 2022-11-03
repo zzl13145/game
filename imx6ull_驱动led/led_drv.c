@@ -67,6 +67,7 @@ static struct file_operations led_fops = {
 	.open		= led_open,
 };
 
+
 /* 入口函数 */
 static int __init led_init(void)
 {
