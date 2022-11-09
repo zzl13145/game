@@ -11,7 +11,8 @@
 #include <linux/device.h>
 #include <asm/io.h>
 
-static int major;
+static int major;//主设备号
+
 static struct class *led_class;
 
 /* registers */
