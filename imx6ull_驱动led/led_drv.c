@@ -16,11 +16,11 @@ static int major;//主设备号
 
 /* registers寄存器地址 */
 /* IOMUXC_SNVS_SW_MUX_CTL_PAD_SNVS_TAMPER3 地址：0x02290000 + 0x14*/
-static volatile unsigned int *IOMUXC_SNVS_SW_MUX_CTL_PAD_SNVS_TAMPER3;//	 configure gpio5_io3 as gpio
+static volatile unsigned int *IOMUXC_SNVS_SW_MUX_CTL_PAD_SNVS_TAMPER3;
 /* GPIO5_GDIR 地址：0x020AC004*/
-static volatile unsigned int *GPIO5_GDIR;//  configure gpio5_io3 as output
+static volatile unsigned int *GPIO5_GDIR;
 /*GPIO5_DR 地址：0x020AC000*/
-static volatile unsigned int *GPIO5_DR;// 	set gpio register: out 1/0 
+static volatile unsigned int *GPIO5_DR;
 
 
 static int led_open(struct inode *inode, struct file *filp)
